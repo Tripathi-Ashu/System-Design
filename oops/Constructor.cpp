@@ -33,16 +33,26 @@ public:
     void display() {
         cout << name << "  " << acc_Number << "  " << balence << endl;
     }
+    // Copy constructor 
+    Customer(Customer &B) {
+        name = B.name;
+        acc_Number = B.acc_Number;
+        balence = B.balence;
+
+    }
+
 };
 
 int main() {
     Customer A1;
     Customer A2("rohit", 23, 100);
     Customer A3("Mohit", 25);
+    Customer A4(A3);
 
     A1.display();
     A2.display();
     A3.display();
+    A4.display();
 
     return 0;
 }
